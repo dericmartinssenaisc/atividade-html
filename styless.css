@@ -1,0 +1,85 @@
+/* ===============================
+   STYLES.CSS — guia passo a passo
+   Você vai aprender editando este arquivo.
+   1) Troque as cores em :root
+   2) Veja como o layout muda
+   3) Vamos evoluir juntos a cada rodada
+   =============================== */
+
+/* 0) RESET SIMPLES E ACESSÍVEL  */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; }
+
+/* 1) TOKENS DE TEMA — MUDE AS CORES AQUI  */
+:root {
+  --bg: #0f172a;          /* fundo (ex.: azul-ardósia bem escuro) */
+  --surface: #111827;     /* cartões/sections */
+  --text: #e5e7eb;        /* texto principal */
+  --muted: #94a3b8;       /* texto secundário */
+  --accent: #68bd91;      /* cor de destaque (links/botões) */
+  --accent-contrast: #001015; /* texto em cima do accent */
+  --radius: 14px;         /* bordas arredondadas */
+  --space: 1rem;          /* espaçamento base */
+  --maxw: 960px;          /* largura do conteúdo */
+}
+
+/* 2) TIPOGRAFIA E BASE */
+body {
+  background: radial-gradient(1200px 800px at 10% 10%, #1f2937 0%, var(--bg) 45%), var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  line-height: 1.6;
+}
+
+/* 3) CONTAINER PRINCIPAL */
+main { max-width: var(--maxw); margin: 2rem auto; padding: 0 var(--space); }
+section { background: var(--surface); padding: calc(var(--space) * 1.5); border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+section + section { margin-top: 1.25rem; }
+
+/* 4) CABEÇALHO E MENU */
+header { position: sticky; top: 0; z-index: 10; background: rgba(17,24,39,.7); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(148,163,184,.15); }
+header > nav, header > h1 { max-width: var(--maxw); margin: 0 auto; padding: .75rem var(--space); }
+#title { font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem); margin: 0; }
+.menu { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem .75rem; padding: 0; margin: .5rem 0 1rem; }
+.menu a { text-decoration: none; color: var(--text); padding: .5rem .75rem; border-radius: 999px; border: 1px solid rgba(148,163,184,.2); }
+.menu a:hover, .menu a:focus { outline: none; background: rgba(34,211,238,.12); border-color: rgba(34,211,238,.35); color: white; }
+
+/* 5) TÍTULOS E PARÁGRAFOS */
+section h2 { margin-top: 0; font-size: clamp(1.1rem, .9rem + 1vw, 1.6rem); }
+p { color: var(--text); opacity: .9; }
+
+/* 6) LISTAS */
+ul, ol { padding-left: 1.25rem; }
+li { margin: .35rem 0; }
+
+/* 7) IMAGEM DE PERFIL (id=sobre) */
+#sobre img { width: 180px; height: auto; border-radius: 50%; border: 3px solid rgba(34,211,238,.35); box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+#sobre { display: grid; grid-template-columns: 180px 1fr; gap: 1rem; align-items: start; }
+@media (max-width: 640px) { #sobre { grid-template-columns: 1fr; } }
+
+/* 8) LISTA DE PROJETOS */
+#projetos ol { background: rgba(148,163,184,.08); padding: .75rem 1rem; border-radius: var(--radius); }
+
+/* 9) FORMULÁRIO */
+form { display: grid; gap: .75rem; margin-top: .75rem; }
+label { font-weight: 600; color: var(--muted); }
+input[type="text"], input[type="email"], textarea { background: #0b1220; color: var(--text); border: 1px solid rgba(148,163,184,.25); border-radius: 10px; padding: .75rem .9rem; }
+input:focus, textarea:focus { outline: 2px solid rgba(34,211,238,.45); border-color: rgba(34,211,238,.65); }
+button[type="submit"] { background: linear-gradient(180deg, var(--accent), #16b0c8); color: var(--accent-contrast); border: none; border-radius: 999px; padding: .75rem 1rem; font-weight: 700; cursor: pointer; box-shadow: 0 8px 18px rgba(34,211,238,.35); }
+button[type="submit"]:hover { filter: brightness(1.05); transform: translateY(-1px); }
+button[type="submit"]:active { transform: translateY(0); }
+
+/* 10) RODAPÉ */
+footer { max-width: var(--maxw); margin: 2rem auto; padding: 1.5rem var(--space); color: var(--muted); text-align: center; }
+
+/* 11) LINKS GERAIS */
+a { color: var(--accent); }
+a:hover { text-decoration: underline; }
+
+/* DICAS:
+   - Troque o valor de --accent para ver o site mudar.
+   - Experimente mudar --radius para quadrado (0px) ou mais arredondado (24px).
+   - Para tema claro, tente: --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --accent:#2563eb.
+*/
