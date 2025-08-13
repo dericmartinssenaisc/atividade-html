@@ -1,0 +1,51 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+  
+  /* Menu */
+  .menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Seções */
+  section {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #f2f2f2;
+  }
+
